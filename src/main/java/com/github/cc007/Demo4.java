@@ -2,7 +2,6 @@ package com.github.cc007;
 
 import lombok.AllArgsConstructor;
 import manifold.ext.delegation.rt.api.link;
-import manifold.ext.delegation.rt.api.part;
 import manifold.science.measures.Velocity;
 
 import static manifold.science.util.UnitConstants.hr;
@@ -11,9 +10,8 @@ import static manifold.science.util.UnitConstants.mph;
 
 /**
  * With manifold-delegation, you can use the link annotation to delegate methods to other classes.
- * Note that Car <u><b>is</b></u> annotated with @part. Because of this the {@link Vehicle#getName()} call in {@link Car#start()} and {@link Car#accelerate(Velocity)} is fully aware of the implementation in {@link Tesla}.
- *
- * TODO find out why the @part annotation causes the code to not compile
+ * Note that Car is not annotated with @part. Because of this the {@link Vehicle#getName()} call in {@link Car#start()}
+ * and {@link Car#accelerate(Velocity)} is unaware of the implementation in {@link Tesla}.
  */
 public class Demo4 {
     public static void main(String[] args) {
@@ -27,16 +25,9 @@ public class Demo4 {
         String getName();
     }
 
-//    @part
     public static class Car implements Vehicle {
         private boolean isStarted = false;
-        private Velocity speed = 0 km/hr;
-
-        @Override
-        public void start() {
-            isStarted = true;
-            System.out.println("${getName()} started");
-        }
+        private Velocity speed = 0km / hr;
 
         @Override
         public void accelerate(Velocity speed) {
@@ -48,16 +39,24 @@ public class Demo4 {
         }
 
         @Override
+        public void start() {
+            isStarted = true;
+            System.out.println("${getName()} started");
+        }
+
+        @Override
         public String getName() {
             return "Car";
         }
     }
 
-    @AllArgsConstructor
-    public static class Tesla implements Vehicle {
-        @link
-        Car car;
 
+    @AllArgsConstructor // This is a Lombok annotation that will create a constructor with all fields as parameters
+    public static class Tesla implements Vehicle {
+        // Here the @link annotation is used to delegate methods to the Car class
+        @link Car car;
+
+        // This method doesn't get called by the methods in the Car class
         @Override
         public String getName() {
             return "Tesla";

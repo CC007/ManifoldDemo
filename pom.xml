@@ -12,7 +12,45 @@
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <manifold.version>2023.1.10</manifold.version>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-strings</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-collections</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-tuple</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-science</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-ext</artifactId>
+            <version>2023.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-preprocessor</artifactId>
+            <version>2023.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-delegation</artifactId>
+            <version>2023.1.10</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

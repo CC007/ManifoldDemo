@@ -26,13 +26,13 @@ public class Demo3 {
         private Velocity speed = 0km / hr;
 
         @Override
-        public void accelerate(Velocity speed) {
+        public void accelerate(Velocity delta) {
             if (!isStarted) {
                 start();
             }
             // Here the plus operator is overloaded to add the speed to the current speed
-            this.speed = this.speed + speed;
-            System.out.println("${getName()} accelerated to ${this.speed}");
+            speed = speed + delta;
+            System.out.println("${getName()} accelerated to $speed");
         }
 
         @Override

@@ -28,13 +28,14 @@ public class Demo2 {
         private Velocity speed = 0km / hr;
 
         @Override
-        public void accelerate(Velocity speed) {
+        public void accelerate(Velocity delta) {
             if (!isStarted) {
                 start();
             }
-            this.speed = this.speed.plus(speed);
+            speed = speed.plus(delta);
             // You can also use string interpolation to call methods on objects or access fields.
-            System.out.println("${getName()} accelerated to ${this.speed}");
+            // Bracets are optional for variables, but required for more complex expressions, like method calls.
+            System.out.println("${getName()} accelerated to $speed");
         }
 
         @Override

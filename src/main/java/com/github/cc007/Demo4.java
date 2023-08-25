@@ -30,12 +30,12 @@ public class Demo4 {
         private Velocity speed = 0km / hr;
 
         @Override
-        public void accelerate(Velocity speed) {
+        public void accelerate(Velocity delta) {
             if (!isStarted) {
                 start();
             }
-            this.speed = this.speed + speed;
-            System.out.println("${getName()} accelerated to ${this.speed}");
+            speed = speed + delta;
+            System.out.println("${getName()} accelerated to $speed");
         }
 
         @Override

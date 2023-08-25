@@ -39,6 +39,11 @@
         </dependency>
         <dependency>
             <groupId>systems.manifold</groupId>
+            <artifactId>manifold-props-rt</artifactId>
+            <version>${manifold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.manifold</groupId>
             <artifactId>manifold-science</artifactId>
             <version>${manifold.version}</version>
         </dependency>
@@ -89,6 +94,11 @@
                         <path>
                             <groupId>systems.manifold</groupId>
                             <artifactId>manifold-preprocessor</artifactId>
+                            <version>${manifold.version}</version>
+                        </path>
+                        <path>
+                            <groupId>systems.manifold</groupId>
+                            <artifactId>manifold-props</artifactId>
                             <version>${manifold.version}</version>
                         </path>
                         <path>

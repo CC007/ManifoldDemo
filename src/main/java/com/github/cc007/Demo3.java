@@ -8,6 +8,7 @@ import static manifold.science.util.UnitConstants.mph;
 
 /**
  * With manifold-ext, you can overload operators.
+ * With manifold-props, you can use getters and setters as if they were fields.
  */
 public class Demo3 {
     public static void main(String[] args) {
@@ -32,13 +33,15 @@ public class Demo3 {
             }
             // Here the plus operator is overloaded to add the speed to the current speed
             speed = speed + delta;
-            System.out.println("${getName()} accelerated to $speed");
+            // getters and setters can be accessed as if they were fields.
+            // This works both for normal statements and (in the case of getters) string interpolation.
+            System.out.println("$name accelerated to $speed");
         }
 
         @Override
         public void start() {
             isStarted = true;
-            System.out.println("${getName()} started");
+            System.out.println("$name started");
         }
 
         @Override

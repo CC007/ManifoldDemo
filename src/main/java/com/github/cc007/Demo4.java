@@ -35,13 +35,13 @@ public class Demo4 {
                 start();
             }
             speed = speed + delta;
-            System.out.println("${getName()} accelerated to $speed");
+            System.out.println("$name accelerated to $speed");
         }
 
         @Override
         public void start() {
             isStarted = true;
-            System.out.println("${getName()} started");
+            System.out.println("$name started");
         }
 
         @Override

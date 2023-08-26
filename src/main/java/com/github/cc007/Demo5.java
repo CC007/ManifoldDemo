@@ -26,8 +26,7 @@ public class Demo5 {
         String getName();
     }
 
-    // TODO find out why the @part annotation causes the code to not compile
-    //@part
+    @part
     public static class Car implements Vehicle {
         private boolean isStarted = false;
         private Velocity speed = 0km / hr;
@@ -38,12 +37,14 @@ public class Demo5 {
                 start();
             }
             speed = speed + delta;
+            System.out.println("${getName()} accelerated to $speed");
             System.out.println("$name accelerated to $speed");
         }
 
         @Override
         public void start() {
             isStarted = true;
+            System.out.println("${getName()} started");
             System.out.println("$name started");
         }
 
@@ -58,6 +59,8 @@ public class Demo5 {
         @link Car car;
 
         // This method DOES get called by the methods in the Car class
+        // note that this getName() method doesn't get called if you use name instead of getName() in the Car class
+        // I don't know if this is a bug or intended behavior
         @Override
         public String getName() {
             return "Tesla";

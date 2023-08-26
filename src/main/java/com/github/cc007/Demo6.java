@@ -19,9 +19,7 @@ public class Demo6 {
         // the @get annotation specifies that a getter will be generated for this field
         @get String readOnlyField1 = "read only";
         // the @set annotation specifies that a setter will be generated for this field
-        // The @get(Private) annotation was needed for the @ToString annotation to work
-        // In the future, this @get(Private) annotation will be added implicitly
-        @set @get(Private) String writeOnlyField = "write only";
+        @set String writeOnlyField = "write only";
 
         // the @var annotation specifies that both a getter and a setter will be generated for this field
         @var String readWriteField = "read write";

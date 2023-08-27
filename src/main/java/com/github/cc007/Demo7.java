@@ -16,7 +16,7 @@ public class Demo7 {
     @ToString
     public static class Properties {
         // public modifier needed here, see issue: https://github.com/manifold-systems/manifold/issues/483
-        @var @set(Protected) public String protectedSet = "can only set in class and subclasses and other classes in the same package";
+        @var @set(Protected) String protectedSet = "can only set in class and subclasses and other classes in the same package";
         @var @set(Package) String packagePrivateSet = "can only set in class and other classes in the same package";
         @var @set(Private) String privateSet = "can only set in class itself";
 
@@ -31,6 +31,7 @@ public class Demo7 {
         public SubProperties() {
             protectedSet = "protected setter used in SubProperties";
             packagePrivateSet = "package-private setter used in SubProperties";
+            // privateSet = "private setter used in SubProperties"; <-- this technically would compile, but it only because it's a nested class
         }
     }
 

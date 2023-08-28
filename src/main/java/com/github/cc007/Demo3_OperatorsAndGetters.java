@@ -10,7 +10,7 @@ import static manifold.science.util.UnitConstants.mph;
  * With manifold-ext, you can overload operators.
  * With manifold-props, you can use getters and setters as if they were fields.
  */
-public class Demo3 {
+public class Demo3_OperatorsAndGetters {
     public static void main(String[] args) {
         Vehicle car = new Car();
         car.accelerate(100mph);

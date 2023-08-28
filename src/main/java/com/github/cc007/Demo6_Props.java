@@ -6,12 +6,10 @@ import manifold.ext.props.rt.api.set;
 import manifold.ext.props.rt.api.val;
 import manifold.ext.props.rt.api.var;
 
-import static manifold.ext.props.rt.api.PropOption.Private;
-
 /**
  * With manifold-props, you can specify if a field should have a getter and/or setter.
  */
-public class Demo6 {
+public class Demo6_Props {
 
     // added lombok annotation to interact with the class fields from inside the class
     @ToString

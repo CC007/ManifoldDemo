@@ -9,7 +9,7 @@ import static manifold.science.util.UnitConstants.mph;
 /**
  * With manifold-science, you can use units of measure in your code.
  */
-public class Demo2 {
+public class Demo2_Science {
     public static void main(String[] args) {
         Vehicle car = new Car();
         // Here the mph unit is used to create a Velocity object

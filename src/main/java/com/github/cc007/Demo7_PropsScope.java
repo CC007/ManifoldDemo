@@ -11,7 +11,7 @@ import static manifold.ext.props.rt.api.PropOption.Protected;
 /**
  * With manifold-props, you can also specify if a setter should be private or protected.
  */
-public class Demo7 {
+public class Demo7_PropsScope {
 
     @ToString
     public static class Properties {

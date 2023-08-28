@@ -3,15 +3,11 @@ package com.github.cc007;
 import manifold.ext.rt.api.auto;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * With manifold-tuple you can use tuples in Java.
  */
-public class Demo8 {
+public class Demo8_Tuples {
     public static void main(String[] args) {
         // Here you see a tuple with unnamed items
         // You'll have to use var or auto to declare a tuple

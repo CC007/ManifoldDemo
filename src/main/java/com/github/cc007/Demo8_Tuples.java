@@ -3,6 +3,8 @@ package com.github.cc007;
 import manifold.ext.rt.api.auto;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * With manifold-tuple you can use tuples in Java.
@@ -48,6 +50,16 @@ public class Demo8_Tuples {
         // or directly, which makes the line a bit longer
         System.out.println("s = ${tupleItems.item1}, i = ${tupleItems.item2}, d = ${tupleItems.item3}, ldt = ${tupleItems.item4}");
 
+        // Note: currently there is a compilation bug when using tuples as parameters in methods
+        // See: https://github.com/manifold-systems/manifold/issues/488
+        var key = (1, 2);
+        Map<Object, String> map = new HashMap<>();
+        map[(1, 2)] = "foo";    // <-- this works
+        map.put(key, "foo");    // <-- this works
+        // map.put((1, 2), "foo"); <-- this doesn't work
+        System.out.println(map[(1, 2)]);     // <-- this works
+        System.out.println(map.get(key));    // <-- this works
+        // System.out.println(map.get((1, 2))); <-- this doesn't work
     }
 
     // Here's how you return a tuple from a method. Here you can't use var. You'll have to use auto.
